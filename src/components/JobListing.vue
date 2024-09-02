@@ -7,7 +7,7 @@ const props = defineProps ({
 });
 
 const showFullDescription = ref(false);
-const trunctationDescription = computed(() => {
+const truncationDescription = computed(() => {
   let description = props.job.description;
   if (!showFullDescription.value) {
     description = description.substring(0, 90) + '...';
@@ -33,7 +33,7 @@ const toggleFullDescription = () => {
 
               <div class="mb-5">
               <div>
-                  {{ trunctationDescription }}
+                  {{ truncationDescription }}
               </div>
               <button @click="toggleFullDescription" class="text-green-500 hover:text-green-600 mb-5">
                 {{ showFullDescription ? 'Less' : 'More' }}
@@ -50,7 +50,7 @@ const toggleFullDescription = () => {
                   {{ job.location }}
                 </div>
                 <RouterLink
-                  :to="'/job/' + job.id"
+                  :to="'/jobs/' + job.id"
                   class="h-[36px] bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm"
                 >
                   Read More
